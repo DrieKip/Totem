@@ -51,6 +51,7 @@ int main(int argc, char* args[])
         Update();
         Render();
     }
+    //eadad
     SDL_Quit();
   return 0;
 }
