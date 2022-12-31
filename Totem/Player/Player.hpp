@@ -18,7 +18,9 @@ class Player : public GameObject {
     void draw();
     void update(double deltaTime);
     void onCollision(GameObject* otherObj);
+    vector2d* velocity;
   private:
+    bool grounded;
 };
 
 #endif /* Player_hpp */

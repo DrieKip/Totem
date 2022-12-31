@@ -13,6 +13,7 @@
 #include "vars.hpp"
 #include <iostream>
 #include "Collisions.hpp"
+#include "Camera.hpp"
 
 using namespace std;
 
@@ -31,8 +32,9 @@ GameObject::GameObject(vector2d* p, vector2d* s, SDL_Texture* texture, bool hasC
     size = s;
     tex = texture;
     flipType = SDL_FLIP_NONE;
+    id = "empty";
     if (hasCol) {
-        cout << endl << "EEDAEDADADADADAED";
+
         col = new Collider(position, size, this);
         Collisions::AddCollider(*col);
         
@@ -54,12 +56,11 @@ void GameObject::draw(){
     some_rect.w = size->x *4;
     some_rect.h = size->y * 4;
     
-    
+    Camera::rectToCamera(some_rect);
     SDL_RenderCopyEx(gRenderer, tex, NULL, &some_rect, 0, NULL, flipType);
 }
 
 void GameObject::update(double deltaTime){
 }
 void GameObject::onCollision(GameObject* otherObj) {
-    std::cout << "WELP";
 }

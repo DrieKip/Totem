@@ -12,6 +12,7 @@
 #include <string>
 #include "vars.hpp"
 #include "GameObject.hpp"
+#include <string>
 
 Collider::Collider() {
     
@@ -31,6 +32,6 @@ void Collider::setPosition(vector2d* p) {
 }
 
 bool Collider::operator==(const Collider& c) const{
-    return (bounds.x == c.bounds.x && bounds.y == c.bounds.y && bounds.w == c.bounds.w && bounds.h == c.bounds.h);
+    return ((c.obj->id == this->obj->id) && (bounds.x == c.bounds.x && bounds.y == c.bounds.y && bounds.w == c.bounds.w && bounds.h == c.bounds.h));
 }
 

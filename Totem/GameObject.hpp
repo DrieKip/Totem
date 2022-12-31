@@ -13,6 +13,7 @@
 #include "Collider.hpp"
 #include "Collisions.hpp"
 #include <stdio.h>
+#include <string>
 class Collider;
 
 class GameObject {
@@ -26,6 +27,7 @@ class GameObject {
     vector2d* position;
     vector2d* size;
     SDL_Texture* tex;
+    std::string id;
     SDL_RendererFlip flipType;
     Collider* col;
   private:
