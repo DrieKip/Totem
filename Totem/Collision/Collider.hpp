@@ -10,15 +10,19 @@
 
 #include <SDL2/SDL.h>
 #include "vars.hpp"
+#include "GameObject.hpp"
 #include <stdio.h>
+class GameObject;
+
 class Collider {
   public:
     Collider();
-    Collider(vector2d* p, vector2d* s, SDL_Texture* texture);
+    Collider(vector2d* p, vector2d* s, GameObject* o);
     ~Collider();
-    void draw();
-    vector2d* size;
-    SDL_Texture* tex;
+    SDL_Rect bounds;
+    GameObject* obj;
+    void setPosition(vector2d* p);
+    bool operator==(const Collider& c) const;
   private:
     
 };

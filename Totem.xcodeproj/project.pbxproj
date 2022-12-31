@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7496D4FC295FF1E400C04589 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7496D4FA295FF1E400C04589 /* Player.cpp */; };
+		7496D500295FFBD900C04589 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7496D4FE295FFBD900C04589 /* Input.cpp */; };
 		749804A6295A1B4D0036D951 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 749804A5295A1B4D0036D951 /* main.cpp */; };
 		749804AE295A1B8F0036D951 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 749804AD295A1B8F0036D951 /* SDL2.framework */; };
 		749804B9295E58E90036D951 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 749804B7295E58E90036D951 /* GameObject.cpp */; };
 		749804BC295E595D0036D951 /* vars.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 749804BA295E595D0036D951 /* vars.cpp */; };
 		749804BE295EA72D0036D951 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 749804BD295EA72D0036D951 /* SDL2_image.framework */; };
 		749804C4295EB0BE0036D951 /* Collider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 749804C2295EB0BE0036D951 /* Collider.cpp */; };
+		74BC9F4D295FC12000E1D4D5 /* Collisions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74BC9F4B295FC12000E1D4D5 /* Collisions.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +31,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7423C7E4295F8F84000FDD3B /* TotemBlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TotemBlock.png; sourceTree = "<group>"; };
+		7496D4FA295FF1E400C04589 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		7496D4FB295FF1E400C04589 /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		7496D4FE295FFBD900C04589 /* Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
+		7496D4FF295FFBD900C04589 /* Input.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
 		749804A2295A1B4D0036D951 /* Totem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Totem; sourceTree = BUILT_PRODUCTS_DIR; };
 		749804A5295A1B4D0036D951 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		749804AD295A1B8F0036D951 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
@@ -40,6 +48,8 @@
 		749804C0295EAE060036D951 /* StanPot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StanPot.png; sourceTree = "<group>"; };
 		749804C2295EB0BE0036D951 /* Collider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collider.cpp; sourceTree = "<group>"; };
 		749804C3295EB0BE0036D951 /* Collider.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collider.hpp; sourceTree = "<group>"; };
+		74BC9F4B295FC12000E1D4D5 /* Collisions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collisions.cpp; sourceTree = "<group>"; };
+		74BC9F4C295FC12000E1D4D5 /* Collisions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collisions.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +65,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7496D4F9295FF1CF00C04589 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				7496D4FA295FF1E400C04589 /* Player.cpp */,
+				7496D4FB295FF1E400C04589 /* Player.hpp */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		7496D4FD295FFAB400C04589 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				7496D4FE295FFBD900C04589 /* Input.cpp */,
+				7496D4FF295FFBD900C04589 /* Input.hpp */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
 		74980499295A1B4D0036D951 = {
 			isa = PBXGroup;
 			children = (
@@ -77,8 +105,10 @@
 			children = (
 				749804B6295AE23F0036D951 /* hello_world.bmp */,
 				749804A5295A1B4D0036D951 /* main.cpp */,
+				7496D4F9295FF1CF00C04589 /* Player */,
 				749804BF295EADC80036D951 /* Assets */,
 				749804B7295E58E90036D951 /* GameObject.cpp */,
+				7496D4FD295FFAB400C04589 /* Input */,
 				749804C1295EB08F0036D951 /* Collision */,
 				749804B8295E58E90036D951 /* GameObject.hpp */,
 				749804BA295E595D0036D951 /* vars.cpp */,
@@ -99,6 +129,7 @@
 		749804BF295EADC80036D951 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				7423C7E4295F8F84000FDD3B /* TotemBlock.png */,
 				749804C0295EAE060036D951 /* StanPot.png */,
 			);
 			path = Assets;
@@ -109,6 +140,8 @@
 			children = (
 				749804C2295EB0BE0036D951 /* Collider.cpp */,
 				749804C3295EB0BE0036D951 /* Collider.hpp */,
+				74BC9F4B295FC12000E1D4D5 /* Collisions.cpp */,
+				74BC9F4C295FC12000E1D4D5 /* Collisions.hpp */,
 			);
 			path = Collision;
 			sourceTree = "<group>";
@@ -171,6 +204,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				749804B9295E58E90036D951 /* GameObject.cpp in Sources */,
+				74BC9F4D295FC12000E1D4D5 /* Collisions.cpp in Sources */,
+				7496D4FC295FF1E400C04589 /* Player.cpp in Sources */,
+				7496D500295FFBD900C04589 /* Input.cpp in Sources */,
 				749804A6295A1B4D0036D951 /* main.cpp in Sources */,
 				749804BC295E595D0036D951 /* vars.cpp in Sources */,
 				749804C4295EB0BE0036D951 /* Collider.cpp in Sources */,
@@ -230,7 +266,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -282,7 +318,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
