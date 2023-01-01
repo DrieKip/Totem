@@ -20,6 +20,6 @@ void Camera::setCamera() {
     position = player->position;
 }
 void Camera::rectToCamera(SDL_Rect &rect) {
-    rect.x -= position->x - 320 + 32;
+    rect.x -= position->x - 320 + 40;
     rect.y -= position->y - 240 + 32;
 }

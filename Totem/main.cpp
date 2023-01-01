@@ -44,7 +44,7 @@ int main(int argc, char* args[])
     SDL_Texture* player_tex = load_tex("Assets/TotemBlock.png");
     SDL_Texture* ground_tex = load_tex("Assets/ground_tile.png");
 
-    Player* Hutspot = new Player(new vector2d(64,64), new vector2d(20,16), player_tex, true);
+    Player* Hutspot = new Player(new vector2d(128,64), new vector2d(16,16), player_tex, true);
     GameObject* ground1 = new GameObject(new vector2d(64,300), new vector2d(16,16), ground_tex, true);
     GameObject* ground2 = new GameObject(new vector2d(128,300), new vector2d(16,16), ground_tex, true);
     GameObject* ground3 = new GameObject(new vector2d(192,300), new vector2d(16,16), ground_tex, true);
@@ -53,7 +53,7 @@ int main(int argc, char* args[])
     GameObject* ground6 = new GameObject(new vector2d(320,364), new vector2d(16,16), ground_tex, true);
     GameObject* ground7 = new GameObject(new vector2d(384,364), new vector2d(16,16), ground_tex, true);
     GameObject* ground8 = new GameObject(new vector2d(384,300), new vector2d(16,16), ground_tex, true);
-    GameObject* ground9 = new GameObject(new vector2d(192,300), new vector2d(16,16), ground_tex, true);
+    GameObject* ground9 = new GameObject(new vector2d(320,108), new vector2d(16,16), ground_tex, true);
     objList.push_back(Hutspot);
     objList.push_back(ground1);
     objList.push_back(ground2);
@@ -63,6 +63,7 @@ int main(int argc, char* args[])
     objList.push_back(ground6);
     objList.push_back(ground7);
     objList.push_back(ground8);
+    objList.push_back(ground9);
     
     Camera::setPlayer((objList.at(0)));
     

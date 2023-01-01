@@ -9,12 +9,19 @@
 #include <iostream>
 #include "Input.hpp"
 #include <SDL2/SDL.h>
+#include "TotemBlock.hpp"
 
 Player::Player(vector2d* p, vector2d* s, SDL_Texture* texture, bool hasCol) :
     GameObject(p, s, texture, hasCol)
 {
     id = "Player";
     velocity = new vector2d(0,0);
+    TotemBlock* some_TotemBlock;
+    some_TotemBlock = new TotemBlock(new vector2d(0,0), new vector2d(16,16), tex, hasCol, 1, this);
+//    if (hasCol) {
+//        col->bounds.w = 64;
+//        col->bounds.h = 64;
+//    }
 }
 
 Player::~Player(){
@@ -57,13 +64,17 @@ void Player::onCollision(GameObject* otherObj){
     SDL_IntersectRect(&(this->col->bounds), &(otherObj->col->bounds), &intersection);
     if (intersection.h < intersection.w) {
         velocity->y = 0;
-        grounded = true;
-        position->y = otherObj->position->y - otherObj->size->y * 4;
+        if (position->y > otherObj->position->y) {
+            position->y = otherObj->position->y + 64;
+        } else {
+            grounded = true;
+            position->y = otherObj->position->y - 64;
+        }
     } else {
         if (position->x > otherObj->position->x) {
-            position->x = otherObj->position->x + otherObj->size->x * 4;
+            position->x = otherObj->position->x + 64;
         } else {
-            position->x = otherObj->position->x- size->x * 4;
+            position->x = otherObj->position->x- 64;
         }
     }
 }
