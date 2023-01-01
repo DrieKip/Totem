@@ -13,12 +13,14 @@ int Input::key_A = 0;
 int Input::key_D = 0;
 int Input::key_W = 0;
 int Input::key_P = 0;
+int Input::key_O = 0;
 
 void Input::getInput() {
     SDL_Event e;
     //key_A = 0;
     //key_D = 0;
     key_P = 0;
+    //key_O = 0;
     while( SDL_PollEvent(&e) != 0 ) {
       //User requests quit
             
@@ -38,6 +40,9 @@ void Input::getInput() {
             if (e.key.keysym.scancode == SDL_SCANCODE_P) {
                 key_P = PRESSED;
             }
+            if (e.key.keysym.scancode == SDL_SCANCODE_O) {
+                key_O = PRESSED;
+            }
             break;
         }
         if (e.type == SDL_KEYUP){
@@ -53,6 +58,9 @@ void Input::getInput() {
             }
             if (e.key.keysym.scancode == SDL_SCANCODE_P) {
                 key_P = RELEASED;
+            }
+            if (e.key.keysym.scancode == SDL_SCANCODE_O) {
+                key_O = RELEASED;
             }
             break;
         }

@@ -15,11 +15,11 @@ class Collider;
 
 class Collisions {
     public:
-        static std::list<Collider> colliders;
-        static void AddCollider(Collider col);
-        static void removeCollider(Collider col);
-        static void clearColliders(Collider col);
-        static void CheckCollision(Collider col);
+        static std::list<Collider*> colliders;
+        static void AddCollider(Collider* col);
+        static void removeCollider(Collider* col);
+        static void clearColliders(Collider* col);
+        static void CheckCollision(Collider* col);
 };
 
 #endif /* Collisions_hpp */

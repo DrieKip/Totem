@@ -36,7 +36,7 @@ GameObject::GameObject(vector2d* p, vector2d* s, SDL_Texture* texture, bool hasC
     if (hasCol) {
 
         col = new Collider(position, size, this);
-        Collisions::AddCollider(*col);
+        Collisions::AddCollider(col);
         
     }
 }

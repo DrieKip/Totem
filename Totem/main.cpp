@@ -64,7 +64,7 @@ int main(int argc, char* args[])
     SceneManager::objList.push_back(ground7);
     SceneManager::objList.push_back(ground8);
     SceneManager::objList.push_back(ground9);
-    
+    Camera::position = new vector2d{0,0};
     Camera::setPlayer(Hutspot);
     
     Uint64 NOW = SDL_GetPerformanceCounter();
@@ -82,7 +82,7 @@ int main(int argc, char* args[])
 }
 void Update() {
     Input::getInput();
-    Camera::setCamera();
+    Camera::setCamera(deltaTime);
     for (GameObject* obj : SceneManager::objList) {
         obj->update(deltaTime);
     }

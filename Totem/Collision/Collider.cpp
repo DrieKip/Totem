@@ -13,6 +13,7 @@
 #include "vars.hpp"
 #include "GameObject.hpp"
 #include <string>
+#include <iostream>
 
 Collider::Collider() {
     

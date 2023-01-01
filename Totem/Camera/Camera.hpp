@@ -21,7 +21,7 @@ public:
     static vector2d* position;
     static GameObject* player;
     static void setPlayer(GameObject* obj);
-    static void setCamera();
+    static void setCamera(double deltaTime);
     static void rectToCamera(SDL_Rect &rect);
 };
 #endif /* Camera_hpp */

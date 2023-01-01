@@ -31,28 +31,42 @@ Player::Player(vector2d* p, vector2d* s, SDL_Texture* texture, bool hasCol) :
 }
 
 Player::~Player(){
-    
+    delete velocity;
 }
 
 void Player::draw(){
     GameObject::draw();
 }
 void Player::swapBlockUp() {
-    position->y -= 64;
     for (int i = 0; i < blocks.size(); i++) {
         if (blocks.at(i)->blockInt == 1) {
             blocks.at(i)->blockInt -= 1;
             blocks.at(i)->id = "Deactivated";
-        }
-        if (blocks.at(i)->blockInt != -1) {
             blocks.at(i)->position->y += 64;
+            position->y -= 70;
+        }
             blocks.at(i)->blockInt -= 1;
+    }
+}
+void Player::swapBlockDown(int block) {
+    for (int i = 0; i < blocks.size(); i++) {
+        if (blocks.at(i)->blockInt >= 1) {
+            blocks.at(i)->blockInt += 1;
+        }
+        if (blocks.at(i)->blockInt == block) {
+            blocks.at(i)->blockInt = 1;
+            blocks.at(i)->id = "TotemBlock";
+            //blocks.at(i)->position->y -= 64;
         }
     }
+    position->y += 64;
+    Input::key_O = 0;
 }
 void Player::update(double deltaTime){
     //std::cout << std::endl << Input::key_D;
-    velocity->y += 0.025 * deltaTime;
+    if (grounded != true) {
+        velocity->y += 0.025 * deltaTime;
+    }
     if (velocity->y >= 5) {
         velocity->y = 5;
     }
@@ -65,19 +79,18 @@ void Player::update(double deltaTime){
         position->x -= 0.15 * deltaTime;
     }
     if (Input::key_W == Input::PRESSED && grounded) {
-        velocity->y = -7.5;
+        velocity->y = -8.25;
     }
     if (Input::key_P == Input::PRESSED) {
         swapBlockUp();
     }
     
-        position->y += velocity->y * 0.1 * deltaTime;
-    
     grounded = false;
     if (col != NULL) {
         col->setPosition(position);
     }
-    Collisions::CheckCollision(*col);
+    Collisions::CheckCollision(col);
+    position->y += velocity->y * 0.1 * deltaTime;
 }
 
 void Player::onCollision(GameObject* otherObj){
@@ -85,12 +98,10 @@ void Player::onCollision(GameObject* otherObj){
         SDL_Rect intersection;
         SDL_IntersectRect(&(this->col->bounds), &(otherObj->col->bounds), &intersection);
         if (otherObj->id == "TotemBlock") {
-            //if (dynamic_cast<TotemBlock*>((otherObj))->blockInt != -1) {
                 return;
-            //}
-            if (dynamic_cast<TotemBlock*>((otherObj))->blockInt == -1) {
-                std::cout << std::endl << "EDADAED" << SDL_GetTicks();
-            }
+        }
+        if (otherObj->id == "Deactivated") {
+            std::cout << std::endl << "EDADAED : " << otherObj->col->bounds.x << " : " << otherObj->col->bounds.y << " :: " << otherObj->position->x << " : " << otherObj->position->y;
         }
         if (intersection.h < intersection.w) {
             velocity->y = 0;
@@ -98,6 +109,10 @@ void Player::onCollision(GameObject* otherObj){
                 position->y = otherObj->position->y + 64;
             } else {
                 grounded = true;
+                if (otherObj->id == "Deactivated" && Input::key_O == Input::PRESSED) {
+                    swapBlockDown(static_cast<TotemBlock*>(otherObj)->blockInt);
+                    return;
+                }
                 position->y = otherObj->position->y - 64;
             }
         } else {

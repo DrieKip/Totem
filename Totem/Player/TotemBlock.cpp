@@ -21,13 +21,16 @@ TotemBlock::TotemBlock(vector2d* p, vector2d* s, SDL_Texture* texture, bool hasC
     velocity = new vector2d(0,0);
 }
 TotemBlock::~TotemBlock() {
-    
+    delete velocity;
 }
 void TotemBlock::draw() {
     GameObject::draw();
 }
 void TotemBlock::onCollision(GameObject* otherObj) {
-    if (otherObj->id != "Player") {
+    if (otherObj->id == "Player") {
+        return;
+    }
+    if (id == "TotemBlock") {
         if (blockInt != -1) {
             SDL_Rect intersection;
             vector2d changes {0,0};
@@ -49,21 +52,25 @@ void TotemBlock::onCollision(GameObject* otherObj) {
                     changes.x = otherObj->position->x- 64 - position->x ;
                 }
             }
-            if (blockInt == -1) {
-                return;
-            }
             *(player->position) += changes;
         }
-        if ((id == "TotemBlock")) {
-                return;
+    }
+    if ((id != "TotemBlock")) {
+        //std::cout << std::endl << "Collided with: " << otherObj->id;
+        if (otherObj->id == "TotemBlock") {
+            return;
         }
         SDL_Rect intersection;
         SDL_IntersectRect(&(this->col->bounds), &(otherObj->col->bounds), &intersection);
         if (intersection.h < intersection.w) {
             velocity->y = 0;
             if (position->y > otherObj->position->y) {
+                if (otherObj->id == "Deactivated") {
+                    return;
+                }
                 position->y = otherObj->position->y + 64;
             } else {
+                grounded = true;
                 position->y = otherObj->position->y - 64;
             }
         } else {
@@ -76,19 +83,22 @@ void TotemBlock::onCollision(GameObject* otherObj) {
     }
 }
 void TotemBlock::update(double deltaTime) {
-    if (blockInt != -1) {
+    if (blockInt > -1) {
         position->x = player->position->x;
         position->y = player->position->y - blockInt * 64;
-    } else if (blockInt == -1) {
-        velocity->y += 0.025 * deltaTime;
+    } else if (blockInt <= -1) {
+        if (grounded != true) {
+            velocity->y += 0.025 * deltaTime;
+        }
         if (velocity->y >= 5) {
             velocity->y = 5;
         }
-        position->y += velocity->y * 0.1 * deltaTime;
+        
     }
-    
+    grounded = false;
     if (col != NULL) {
         col->setPosition(position);
     }
-    Collisions::CheckCollision(*col);
+    Collisions::CheckCollision(col);
+    position->y += velocity->y * 0.1 * deltaTime;
 }

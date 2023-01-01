@@ -25,6 +25,7 @@ class Player : public GameObject {
     std::vector<TotemBlock*> blocks;
     int current_block;
     void swapBlockUp();
+    void swapBlockDown(int block);
   private:
     bool grounded;
 };
