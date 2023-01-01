@@ -39,10 +39,10 @@ void TotemBlock::onCollision(GameObject* otherObj) {
                 return;
             }
             if (intersection.h < intersection.w) {
-                player->velocity->y = 0;
                 if (position->y > otherObj->position->y) {
                     changes.y = otherObj->position->y + 64 - position->y;
                 } else {
+                    player->velocity->y = 0;
                     changes.y = otherObj->position->y - 64 - position->y;
                 }
             } else {
@@ -55,7 +55,7 @@ void TotemBlock::onCollision(GameObject* otherObj) {
             *(player->position) += changes;
         }
     }
-    if ((id != "TotemBlock")) {
+    if ((id == "Deactivated")) {
         //std::cout << std::endl << "Collided with: " << otherObj->id;
         if (otherObj->id == "TotemBlock") {
             return;
@@ -65,9 +65,6 @@ void TotemBlock::onCollision(GameObject* otherObj) {
         if (intersection.h < intersection.w) {
             velocity->y = 0;
             if (position->y > otherObj->position->y) {
-                if (otherObj->id == "Deactivated") {
-                    return;
-                }
                 position->y = otherObj->position->y + 64;
             } else {
                 grounded = true;

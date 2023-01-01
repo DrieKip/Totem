@@ -107,10 +107,9 @@ void Player::onCollision(GameObject* otherObj){
                 position->y = otherObj->position->y + 64;
             } else {
                 grounded = true;
+                position->y = otherObj->position->y - 64;
                 if (otherObj->id == "Deactivated" && Input::key_O == Input::PRESSED && intersection.w > 50) {
                     swapBlockDown(static_cast<TotemBlock*>(otherObj)->blockInt);
-                } else {
-                    position->y = otherObj->position->y - 64;
                 }
             }
         } else {
