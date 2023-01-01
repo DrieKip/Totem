@@ -10,7 +10,10 @@
 
 #include <stdio.h>
 #include "GameObject.hpp"
+#include "Player.hpp"
+#include "vars.hpp"
 
+class Player;
 class TotemBlock : public GameObject {
   public:
     TotemBlock(vector2d* p, vector2d* s, SDL_Texture* texture, bool hasCol, int num, Player* play);
@@ -19,6 +22,7 @@ class TotemBlock : public GameObject {
     void update(double deltaTime);
     void onCollision(GameObject* otherObj);
     Player* player;
+    vector2d* velocity;
     int blockInt;
   private:
 };

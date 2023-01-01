@@ -61,6 +61,7 @@ void GameObject::draw(){
 }
 
 void GameObject::update(double deltaTime){
+    
 }
 void GameObject::onCollision(GameObject* otherObj) {
 }

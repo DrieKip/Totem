@@ -11,6 +11,7 @@
 #include <iostream>
 #include "Input.hpp"
 #include "Camera.hpp"
+#include "SceneManager.hpp"
 using namespace std;
 
 void Render();
@@ -20,7 +21,6 @@ SDL_Texture* load_tex(string filename);
 SDL_Window* gWindow = 0;
 SDL_Event e;
 double deltaTime = 0;
-vector<GameObject*> objList;
 bool a = false;
 bool d = false;
 
@@ -53,19 +53,19 @@ int main(int argc, char* args[])
     GameObject* ground6 = new GameObject(new vector2d(320,364), new vector2d(16,16), ground_tex, true);
     GameObject* ground7 = new GameObject(new vector2d(384,364), new vector2d(16,16), ground_tex, true);
     GameObject* ground8 = new GameObject(new vector2d(384,300), new vector2d(16,16), ground_tex, true);
-    GameObject* ground9 = new GameObject(new vector2d(320,108), new vector2d(16,16), ground_tex, true);
-    objList.push_back(Hutspot);
-    objList.push_back(ground1);
-    objList.push_back(ground2);
-    objList.push_back(ground3);
-    objList.push_back(ground4);
-    objList.push_back(ground5);
-    objList.push_back(ground6);
-    objList.push_back(ground7);
-    objList.push_back(ground8);
-    objList.push_back(ground9);
+    GameObject* ground9 = new GameObject(new vector2d(320,44), new vector2d(16,16), ground_tex, true);
+    SceneManager::objList.push_back(Hutspot);
+    SceneManager::objList.push_back(ground1);
+    SceneManager::objList.push_back(ground2);
+    SceneManager::objList.push_back(ground3);
+    SceneManager::objList.push_back(ground4);
+    SceneManager::objList.push_back(ground5);
+    SceneManager::objList.push_back(ground6);
+    SceneManager::objList.push_back(ground7);
+    SceneManager::objList.push_back(ground8);
+    SceneManager::objList.push_back(ground9);
     
-    Camera::setPlayer((objList.at(0)));
+    Camera::setPlayer(Hutspot);
     
     Uint64 NOW = SDL_GetPerformanceCounter();
     Uint64 LAST = 0;
@@ -83,13 +83,13 @@ int main(int argc, char* args[])
 void Update() {
     Input::getInput();
     Camera::setCamera();
-    for (GameObject* obj : objList) {
+    for (GameObject* obj : SceneManager::objList) {
         obj->update(deltaTime);
     }
 }
 void Render() {
     SDL_RenderClear(gRenderer);
-    for (GameObject* obj : objList) {
+    for (GameObject* obj : SceneManager::objList) {
         obj->draw();
     }
     SDL_RenderPresent(gRenderer);

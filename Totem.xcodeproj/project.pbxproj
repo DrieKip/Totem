@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		74797657296154CA0071FCA7 /* TotemBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74797655296154CA0071FCA7 /* TotemBlock.cpp */; };
+		7479765B2961591C0071FCA7 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 747976592961591C0071FCA7 /* SceneManager.cpp */; };
 		749125232960B9510098C657 /* Assets in CopyFiles */ = {isa = PBXBuildFile; fileRef = 749125222960B9510098C657 /* Assets */; };
 		7496D4FC295FF1E400C04589 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7496D4FA295FF1E400C04589 /* Player.cpp */; };
 		7496D500295FFBD900C04589 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7496D4FE295FFBD900C04589 /* Input.cpp */; };
@@ -39,6 +40,8 @@
 		747976542960C0220071FCA7 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		74797655296154CA0071FCA7 /* TotemBlock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TotemBlock.cpp; sourceTree = "<group>"; };
 		74797656296154CA0071FCA7 /* TotemBlock.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TotemBlock.hpp; sourceTree = "<group>"; };
+		747976592961591C0071FCA7 /* SceneManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SceneManager.cpp; sourceTree = "<group>"; };
+		7479765A2961591C0071FCA7 /* SceneManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SceneManager.hpp; sourceTree = "<group>"; };
 		7491251E2960B8060098C657 /* ground_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground_tile.png; sourceTree = "<group>"; };
 		749125222960B9510098C657 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = Totem/Assets; sourceTree = "<group>"; };
 		7496D4FA295FF1E400C04589 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 		747976582961588A0071FCA7 /* LevelSystem */ = {
 			isa = PBXGroup;
 			children = (
+				747976592961591C0071FCA7 /* SceneManager.cpp */,
+				7479765A2961591C0071FCA7 /* SceneManager.hpp */,
 			);
 			path = LevelSystem;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 				74BC9F4D295FC12000E1D4D5 /* Collisions.cpp in Sources */,
 				7496D4FC295FF1E400C04589 /* Player.cpp in Sources */,
 				7496D500295FFBD900C04589 /* Input.cpp in Sources */,
+				7479765B2961591C0071FCA7 /* SceneManager.cpp in Sources */,
 				7496D5052960343200C04589 /* Camera.cpp in Sources */,
 				749804A6295A1B4D0036D951 /* main.cpp in Sources */,
 				749804BC295E595D0036D951 /* vars.cpp in Sources */,

@@ -17,5 +17,6 @@ struct vector2d {
   double x;
   double y;
   vector2d(double xx, double yy);
+  void operator+=(const vector2d& other);
 };
 #endif /* vars_hpp */

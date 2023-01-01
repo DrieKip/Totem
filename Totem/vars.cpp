@@ -17,3 +17,8 @@ vector2d::vector2d(double xx, double yy){
   x = xx;
   y = yy;
 }
+
+void vector2d::operator+=(const vector2d& other){
+    x += other.x;
+    y += other.y;
+}
