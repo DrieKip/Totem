@@ -41,9 +41,9 @@ void Player::swapBlockUp() {
     for (int i = 0; i < blocks.size(); i++) {
         if (blocks.at(i)->blockInt == 1) {
             blocks.at(i)->blockInt -= 1;
+            position->y -=68;
+            blocks.at(i)->position->y += 60;
             blocks.at(i)->id = "Deactivated";
-            blocks.at(i)->position->y += 64;
-            position->y -= 70;
         }
             blocks.at(i)->blockInt -= 1;
     }
@@ -56,10 +56,11 @@ void Player::swapBlockDown(int block) {
         if (blocks.at(i)->blockInt == block) {
             blocks.at(i)->blockInt = 1;
             blocks.at(i)->id = "TotemBlock";
+            position->x = blocks.at(i)->position->x;
+            position->y += 60;
             //blocks.at(i)->position->y -= 64;
         }
     }
-    position->y += 64;
     Input::key_O = 0;
 }
 void Player::update(double deltaTime){
@@ -100,20 +101,17 @@ void Player::onCollision(GameObject* otherObj){
         if (otherObj->id == "TotemBlock") {
                 return;
         }
-        if (otherObj->id == "Deactivated") {
-            std::cout << std::endl << "EDADAED : " << otherObj->col->bounds.x << " : " << otherObj->col->bounds.y << " :: " << otherObj->position->x << " : " << otherObj->position->y;
-        }
         if (intersection.h < intersection.w) {
             velocity->y = 0;
             if (position->y > otherObj->position->y) {
                 position->y = otherObj->position->y + 64;
             } else {
                 grounded = true;
-                if (otherObj->id == "Deactivated" && Input::key_O == Input::PRESSED) {
+                if (otherObj->id == "Deactivated" && Input::key_O == Input::PRESSED && intersection.w > 50) {
                     swapBlockDown(static_cast<TotemBlock*>(otherObj)->blockInt);
-                    return;
+                } else {
+                    position->y = otherObj->position->y - 64;
                 }
-                position->y = otherObj->position->y - 64;
             }
         } else {
             if (position->x > otherObj->position->x) {
