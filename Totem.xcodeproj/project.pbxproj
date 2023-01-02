@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EBDDA9729624FF60016D302 /* UIObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EBDDA9529624FF60016D302 /* UIObject.cpp */; };
+		2EBDDA9D296262F50016D302 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EBDDA9B296262F50016D302 /* Button.cpp */; };
 		74797657296154CA0071FCA7 /* TotemBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74797655296154CA0071FCA7 /* TotemBlock.cpp */; };
 		7479765B2961591C0071FCA7 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 747976592961591C0071FCA7 /* SceneManager.cpp */; };
 		7479765E29625E5E0071FCA7 /* GameObjectLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7479765C29625E5E0071FCA7 /* GameObjectLoader.cpp */; };
@@ -37,6 +39,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2EBDDA9529624FF60016D302 /* UIObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UIObject.cpp; sourceTree = "<group>"; };
+		2EBDDA9629624FF60016D302 /* UIObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UIObject.hpp; sourceTree = "<group>"; };
+		2EBDDA9B296262F50016D302 /* Button.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
+		2EBDDA9C296262F50016D302 /* Button.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Button.hpp; sourceTree = "<group>"; };
 		7423C7E4295F8F84000FDD3B /* TotemBlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TotemBlock.png; sourceTree = "<group>"; };
 		747976542960C0220071FCA7 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		74797655296154CA0071FCA7 /* TotemBlock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TotemBlock.cpp; sourceTree = "<group>"; };
@@ -83,9 +89,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EBDDA9329624FB50016D302 /* UI System */ = {
+			isa = PBXGroup;
+			children = (
+				2EBDDA9A296262E80016D302 /* Button */,
+				2EBDDA98296250060016D302 /* UIObject */,
+			);
+			path = "UI System";
+			sourceTree = "<group>";
+		};
+		2EBDDA98296250060016D302 /* UIObject */ = {
+			isa = PBXGroup;
+			children = (
+				2EBDDA9529624FF60016D302 /* UIObject.cpp */,
+				2EBDDA9629624FF60016D302 /* UIObject.hpp */,
+			);
+			path = UIObject;
+			sourceTree = "<group>";
+		};
+		2EBDDA9A296262E80016D302 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				2EBDDA9B296262F50016D302 /* Button.cpp */,
+				2EBDDA9C296262F50016D302 /* Button.hpp */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		747976582961588A0071FCA7 /* LevelSystem */ = {
 			isa = PBXGroup;
 			children = (
+				7496D4F9295FF1CF00C04589 /* Player */,
 				747976592961591C0071FCA7 /* SceneManager.cpp */,
 				7479765A2961591C0071FCA7 /* SceneManager.hpp */,
 				7479765C29625E5E0071FCA7 /* GameObjectLoader.cpp */,
@@ -145,9 +179,9 @@
 		749804A4295A1B4D0036D951 /* Totem */ = {
 			isa = PBXGroup;
 			children = (
+				2EBDDA9329624FB50016D302 /* UI System */,
 				747976582961588A0071FCA7 /* LevelSystem */,
 				749804A5295A1B4D0036D951 /* main.cpp */,
-				7496D4F9295FF1CF00C04589 /* Player */,
 				749804BF295EADC80036D951 /* Assets */,
 				749804B7295E58E90036D951 /* GameObject.cpp */,
 				7496D5022960341F00C04589 /* Camera */,
@@ -250,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EBDDA9729624FF60016D302 /* UIObject.cpp in Sources */,
 				749804B9295E58E90036D951 /* GameObject.cpp in Sources */,
 				74BC9F4D295FC12000E1D4D5 /* Collisions.cpp in Sources */,
 				7496D4FC295FF1E400C04589 /* Player.cpp in Sources */,
@@ -261,6 +296,7 @@
 				749804BC295E595D0036D951 /* vars.cpp in Sources */,
 				74797657296154CA0071FCA7 /* TotemBlock.cpp in Sources */,
 				749804C4295EB0BE0036D951 /* Collider.cpp in Sources */,
+				2EBDDA9D296262F50016D302 /* Button.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

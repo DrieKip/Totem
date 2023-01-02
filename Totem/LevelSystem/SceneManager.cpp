@@ -11,3 +11,4 @@
 using namespace std;
 
 std::list<GameObject*> SceneManager::objList;
+std::list<UIObject*> SceneManager::uiList;

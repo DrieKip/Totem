@@ -11,11 +11,13 @@
 #include <stdio.h>
 #include <list>
 #include "GameObject.hpp"
+#include "UIObject.hpp"
 
 class GameObject;
 
 class SceneManager {
 public:
     static std::list<GameObject*> objList;
+    static std::list<UIObject*> uiList;
 };
 #endif /* SceneManager_hpp */
