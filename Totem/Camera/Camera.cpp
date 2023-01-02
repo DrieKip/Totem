@@ -28,6 +28,10 @@ void Camera::setCamera(double deltaTime) {
     //position = player->position;
 }
 void Camera::rectToCamera(SDL_Rect &rect) {
-    rect.x -= position->x - 320 + 40;
-    rect.y -= position->y - 240 + 32;
+    SDL_DisplayMode DM;
+    SDL_GetCurrentDisplayMode(0, &DM);
+    auto Width = DM.w;
+    auto Height = DM.h;
+    rect.x -= position->x - Width/2 + 40;
+    rect.y -= position->y - Height/2 + 32;
 }

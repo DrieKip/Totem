@@ -28,9 +28,8 @@ void Collisions::CheckCollision(Collider* col) {
     for (Collider* othercol : colliders) {
         if (!((col == othercol)) && SDL_HasIntersection(&(col->bounds), &(othercol->bounds))) {
             col->obj->onCollision(othercol->obj);
-            othercol->obj->onCollision(col->obj);
-            if (othercol->obj->id == "Deactivated") {
-                return;
+            if (col->obj->id != "Deactivated") {
+                othercol->obj->onCollision(col->obj);
             }
         }
     }

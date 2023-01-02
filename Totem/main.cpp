@@ -12,6 +12,7 @@
 #include "Input.hpp"
 #include "Camera.hpp"
 #include "SceneManager.hpp"
+#include "GameObjectLoader.hpp"
 using namespace std;
 
 void Render();
@@ -29,10 +30,15 @@ bool quit = true;
 int main(int argc, char* args[])
 {
   if (SDL_Init(SDL_INIT_EVERYTHING) >= 0) {
+      SDL_DisplayMode DM;
+      SDL_GetCurrentDisplayMode(0, &DM);
+      auto Width = DM.w;
+      auto Height = DM.h;
     gWindow = SDL_CreateWindow("TOTEM",
       SDL_WINDOWPOS_CENTERED,
       SDL_WINDOWPOS_CENTERED,
-      640, 480, SDL_WINDOW_SHOWN);
+      Width, Height, SDL_WINDOW_SHOWN);
+      SDL_SetWindowFullscreen(gWindow, SDL_WINDOW_FULLSCREEN);
 
     if (gWindow != 0) {
       gRenderer = SDL_CreateRenderer(gWindow, -1, 0);
@@ -43,6 +49,7 @@ int main(int argc, char* args[])
   }
     SDL_Texture* player_tex = load_tex("Assets/TotemBlock.png");
     SDL_Texture* ground_tex = load_tex("Assets/ground_tile.png");
+    GameObjectLoader::setTextures();
 
     Player* Hutspot = new Player(new vector2d(128,64), new vector2d(16,16), player_tex, true);
     GameObject* ground1 = new GameObject(new vector2d(64,300), new vector2d(16,16), ground_tex, true);
