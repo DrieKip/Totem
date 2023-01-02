@@ -14,6 +14,7 @@ int Input::key_D = 0;
 int Input::key_W = 0;
 int Input::key_P = 0;
 int Input::key_O = 0;
+SDL_Event* Input::forButton = NULL;
 
 void Input::getInput() {
     SDL_Event e;

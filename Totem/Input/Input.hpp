@@ -9,6 +9,7 @@
 #define Input_hpp
 
 #include <stdio.h>
+#include <SDL2/SDL.h>
 class Input {
 public:
     static int key_A;
@@ -19,6 +20,7 @@ public:
     static bool quit;
     static enum states {NO_PRESS = 0, PRESSED, RELEASED};
     static void getInput();
+    static SDL_Event* forButton;
 private:
     
 };

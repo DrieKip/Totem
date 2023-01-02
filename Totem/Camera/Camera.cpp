@@ -17,13 +17,13 @@ void Camera::setPlayer(GameObject* obj) {
     player = obj;
 }
 void Camera::setCamera(double deltaTime) {
-    if (abs(position->x - player->position->x) >= 32) {
-        if (position->x < player->position->x) position->x += 0.1 * deltaTime;
-        if (position->x > player->position->x) position->x -= 0.1 * deltaTime;
+    double addX = 0.0015 * deltaTime * (position->x - player->position->x);
+    double addY = 0.0015 * deltaTime * (position->y - player->position->y);
+    if (abs(position->x - player->position->x) >= 5) {
+        position->x -= addX;
     }
-    if (abs(position->y - player->position->y) >= 32) {
-        if (position->y < player->position->y) position->y += 0.5 * deltaTime;
-        if (position->y > player->position->y) position->y -= 0.5 * deltaTime;
+    if (abs(position->y - player->position->y) >= 5) {
+        position->y -= addY;
     }
     //position = player->position;
 }
@@ -32,6 +32,6 @@ void Camera::rectToCamera(SDL_Rect &rect) {
     SDL_GetCurrentDisplayMode(0, &DM);
     auto Width = DM.w;
     auto Height = DM.h;
-    rect.x -= position->x - Width/2 + 40;
+    rect.x -= position->x - Width/2 + 32;
     rect.y -= position->y - Height/2 + 32;
 }
