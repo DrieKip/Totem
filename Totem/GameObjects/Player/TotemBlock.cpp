@@ -49,7 +49,7 @@ void TotemBlock::onCollision(GameObject* otherObj) {
                 }
             } else {
                 if (position->x > otherObj->position->x) {
-                    changes.x =  otherObj->position->x + 64 - position->x;
+                    changes.x =  otherObj->position->x + otherObj->size->x * 4 - position->x;
                 } else {
                     changes.x = otherObj->position->x- 64 - position->x ;
                 }
@@ -73,7 +73,7 @@ void TotemBlock::onCollision(GameObject* otherObj) {
             }
         } else {
             if (position->x > otherObj->position->x) {
-                position->x = otherObj->position->x + 64;
+                position->x = otherObj->position->x + otherObj->size->x * 4;
             } else {
                 position->x = otherObj->position->x- 64;
             }

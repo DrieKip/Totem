@@ -58,7 +58,6 @@ void Player::swapBlockUp() {
         }
             blocks.at(i)->blockInt -= 1;
     }
-    std::cout << std::endl;
 }
 void Player::swapBlockDown(int block) {
     for (int i = 0; i < blocks.size(); i++) {
@@ -114,8 +113,7 @@ void Player::onCollision(GameObject* otherObj){
         if (intersection.h < intersection.w) {
             velocity->y = 0;
             if (position->y > otherObj->position->y) {
-                position->y = otherObj->position->y + 64;
-                    position->y = otherObj->position->y + 64;
+                position->y = otherObj->position->y - 64 + otherObj->col->bounds.y;
             } else {
                 grounded = true;
                 position->y = otherObj->position->y - 64;
@@ -125,7 +123,8 @@ void Player::onCollision(GameObject* otherObj){
             }
         } else {
             if (position->x > otherObj->position->x) {
-                position->x = otherObj->position->x + 64;
+                std:: cout << std::endl << otherObj->size->x;;
+                position->x = otherObj->position->x + otherObj->size->x * 4;// + otherObj->size->x;
             } else {
                 position->x = otherObj->position->x- 64;
             }

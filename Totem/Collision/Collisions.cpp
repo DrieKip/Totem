@@ -15,7 +15,6 @@ list<Collider*> Collisions::colliders;
 
 void Collisions::AddCollider(Collider* col) {
     //std::list<Collider> Collisions::colliders;
-    std::cout << std::endl << "HERE!";
     colliders.push_back(col);
 }
 void Collisions::removeCollider(Collider* col) {

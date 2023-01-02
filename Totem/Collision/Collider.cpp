@@ -28,8 +28,8 @@ Collider::Collider(vector2d* p, vector2d* s, GameObject* o){
 Collider::~Collider() {
 }
 void Collider::setPosition(vector2d* p) {
-    bounds.x = p->x;
-    bounds.y = p->y;
+        bounds.x = p->x;
+        bounds.y = p->y;
 }
 
 bool Collider::operator==(const Collider& c) const{
