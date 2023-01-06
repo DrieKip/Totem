@@ -42,7 +42,7 @@ int main(int argc, char* args[])
       SDL_WINDOWPOS_CENTERED,
       SDL_WINDOWPOS_CENTERED,
       Width, Height, SDL_WINDOW_SHOWN);
-      SDL_SetWindowFullscreen(gWindow, SDL_WINDOW_FULLSCREEN_DESKTOP);
+      //SDL_SetWindowFullscreen(gWindow, SDL_WINDOW_FULLSCREEN_DESKTOP);
 
     if (gWindow != 0) {
       gRenderer = SDL_CreateRenderer(gWindow, -1, 0);
@@ -55,11 +55,10 @@ int main(int argc, char* args[])
     SDL_Texture* ground_tex = load_tex("Assets/TileTest.png");
     SDL_Texture* stanPot = load_tex("Assets/StanPot.png");
     GameObjectLoader::setTextures();
-
-    Player* Hutspot = new Player(new vector2d(300,64), new vector2d(16,16), player_tex, true);
-    
     Map* some_map = new Map("LevelSystem/CreatingLevels/Totem.json");
     some_map->createMap();
+
+    Player* Hutspot = new Player(new vector2d(300,64), new vector2d(16,16), player_tex, true);
     
     SceneManager::objList.push_back(Hutspot);
     

@@ -24,7 +24,9 @@ class TotemBlock : public GameObject {
     Player* player;
     vector2d* velocity;
     int blockInt;
+    Collider* checkCol;
   private:
     bool grounded;
+    bool extraCheck;
 };
 #endif /* TotemBlock_hpp */

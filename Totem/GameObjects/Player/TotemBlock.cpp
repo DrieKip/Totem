@@ -20,6 +20,8 @@ TotemBlock::TotemBlock(vector2d* p, vector2d* s, SDL_Texture* texture, bool hasC
     id = "TotemBlock";
     velocity = new vector2d(0,0);
     grounded = true;
+    checkCol = new Collider(position, new vector2d(32, 32), this);
+    Collisions::AddCollider(col);
 }
 TotemBlock::~TotemBlock() {
     delete velocity;
@@ -29,6 +31,12 @@ void TotemBlock::draw() {
 }
 void TotemBlock::onCollision(GameObject* otherObj) {
     if (otherObj->id == "Player") {
+        return;
+    }
+    if (SDL_HasIntersection(&(checkCol->bounds), &(otherObj->col->bounds))) {
+        extraCheck = true;
+    }
+    if (!SDL_HasIntersection(&(col->bounds), &(otherObj->col->bounds))) {
         return;
     }
     if (id == "TotemBlock") {
@@ -42,7 +50,7 @@ void TotemBlock::onCollision(GameObject* otherObj) {
             if (intersection.h < intersection.w) {
                 player->velocity->y = 0;
                 if (position->y > otherObj->position->y) {
-                    changes.y = otherObj->position->y + 64 - position->y;
+                    changes.y = otherObj->position->y + otherObj->size->y * 4- position->y;
                 } else {
                     player->velocity->y = 0;
                     changes.y = otherObj->position->y - 64 - position->y;
@@ -66,18 +74,23 @@ void TotemBlock::onCollision(GameObject* otherObj) {
         if (intersection.h < intersection.w) {
             velocity->y = 0;
             if (position->y > otherObj->position->y) {
-                position->y = otherObj->position->y + 64;
+                position->y = otherObj->position->y + otherObj->size->y * 4;
             } else {
                 grounded = true;
                 position->y = otherObj->position->y - 64;
             }
         } else {
             if (position->x > otherObj->position->x) {
+                //position->x = otherObj->position->x + otherObj->size->x * 4;
                 position->x = otherObj->position->x + otherObj->size->x * 4;
             } else {
                 position->x = otherObj->position->x- 64;
             }
         }
+    }
+    if (SDL_HasIntersection(&(checkCol->bounds), &(otherObj->col->bounds))) {
+        extraCheck = true;
+        return;
     }
 }
 void TotemBlock::update(double deltaTime) {
@@ -85,6 +98,9 @@ void TotemBlock::update(double deltaTime) {
         position->x = player->position->x;
         position->y = player->position->y - blockInt * 64;
     } else if (blockInt <= -1) {
+        if (extraCheck == false) {
+            grounded = false;
+        }
         if (!grounded) {
             velocity->y += 0.025 * deltaTime;
         }
@@ -93,11 +109,14 @@ void TotemBlock::update(double deltaTime) {
         }
         
     }
-    if (id == "TotemBlock") {
-        grounded = false;
-    }
+        extraCheck = false;
     if (col != NULL) {
         col->setPosition(position);
+        vector2d* somevec = new vector2d(0,0);
+        somevec->x = position->x + 16;
+        somevec->y = position->y + 40;
+        checkCol->setPosition(somevec);
+        delete somevec;
     }
     Collisions::CheckCollision(col);
     position->y += velocity->y * 0.1 * deltaTime;

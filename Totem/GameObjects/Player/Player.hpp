@@ -26,8 +26,10 @@ class Player : public GameObject {
     int current_block;
     void swapBlockUp();
     void swapBlockDown(int block);
+    Collider* checkCol;
   private:
     bool grounded;
+    bool extraCheck;
 };
 
 #endif /* Player_hpp */

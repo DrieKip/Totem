@@ -25,6 +25,14 @@ Collider::Collider(vector2d* p, vector2d* s, GameObject* o){
     bounds.h = s->y * 4;
     obj = o;
 }
+Collider::Collider(vector2d* p, vector2d* s, GameObject* o, std::string i){
+    bounds.x = p->x;
+    bounds.y = p->y;
+    bounds.w = s->x * 4;
+    bounds.h = s->y * 4;
+    obj = o;
+    id = i;
+}
 Collider::~Collider() {
 }
 void Collider::setPosition(vector2d* p) {

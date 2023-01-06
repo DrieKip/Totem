@@ -33,10 +33,12 @@ Player::Player(vector2d* p, vector2d* s, SDL_Texture* texture, bool hasCol) :
     blocks.push_back(some_TotemBlock3);
     blocks.push_back(some_TotemBlock4);
     grounded = false;
-//    if (hasCol) {
+    if (hasCol) {
+        checkCol = new Collider(position, new vector2d(4, 4), this);
+        Collisions::AddCollider(col);
 //        col->bounds.w = 64;
 //        col->bounds.h = 64;
-//    }
+    }
 }
 
 Player::~Player(){
@@ -52,9 +54,10 @@ void Player::swapBlockUp() {
         }
         if (blocks.at(i)->blockInt == 1) {
             blocks.at(i)->blockInt -= 1;
-            position->y -=68;
-            blocks.at(i)->position->y += 60;
+            position->y -=78;
+            blocks.at(i)->position->y += 64;
             blocks.at(i)->id = "Deactivated";
+            extraCheck = false;
         }
             blocks.at(i)->blockInt -= 1;
     }
@@ -76,7 +79,13 @@ void Player::swapBlockDown(int block) {
 }
 void Player::update(double deltaTime){
     //std::cout << std::endl << Input::key_D;
+    if (extraCheck == false) {
+        grounded = false;
+    }
+    if (!grounded) {
         velocity->y += 0.025 * deltaTime;
+    }
+    
     if (velocity->y >= 5) {
         velocity->y = 5;
     }
@@ -89,16 +98,25 @@ void Player::update(double deltaTime){
         position->x -= 0.15 * deltaTime;
     }
     if (Input::key_W == Input::PRESSED && grounded) {
+        grounded = false;
         velocity->y = -8.25;
     }
     if (Input::key_P == Input::PRESSED) {
         swapBlockUp();
     }
-    
-    grounded = false;
+    /*if (grounded && extraCheck)*/ cout << endl<< grounded << " : " << extraCheck;
+    extraCheck = false;
+    //cout << endl << extraCheck;
     if (col != NULL) {
         col->setPosition(position);
+        
+        vector2d* somevec = new vector2d(0,0);
+        somevec->x = position->x + 6 * 4;
+        somevec->y = position->y + 64;
+        checkCol->setPosition(somevec);
+        delete somevec;
     }
+    Collisions::CheckCollision(checkCol);
     Collisions::CheckCollision(col);
     position->y += velocity->y * 0.1 * deltaTime;
 }
@@ -107,26 +125,42 @@ void Player::onCollision(GameObject* otherObj){
     if (otherObj->id == "TotemBlock") {
         return;
     }
+    if (SDL_HasIntersection(&(checkCol->bounds), &(otherObj->col->bounds))) {
+        cout << " : " << "HMMM";
+        extraCheck = true;
+        if (otherObj->id == "Deactivated" && grounded && Input::key_O == Input::PRESSED) {
+            grounded = false;
+            swapBlockDown(static_cast<TotemBlock*>(otherObj)->blockInt);
+        }
+    }
+    if (!SDL_HasIntersection(&(col->bounds), &(otherObj->col->bounds))) {
+        return;
+    }
     if (otherObj->id != "player" && otherObj->id != "TotemBlock") {
         SDL_Rect intersection;
+        double someint = 0;
+        //if (otherObj->id == "Deactivated") someint = 0.5;
         SDL_IntersectRect(&(this->col->bounds), &(otherObj->col->bounds), &intersection);
-        if (intersection.h < intersection.w) {
+        if (intersection.h + 4 < intersection.w) {
             velocity->y = 0;
+            if (extraCheck) {
+                velocity->y = 0;
+            }
             if (position->y > otherObj->position->y) {
-                position->y = otherObj->position->y - 64 + otherObj->col->bounds.y;
+                position->y = otherObj->position->y + otherObj->size->y * 4;
+                otherObj->position->y -= someint;
             } else {
                 grounded = true;
                 position->y = otherObj->position->y - 64;
-                if (otherObj->id == "Deactivated" && Input::key_O == Input::PRESSED && intersection.w > 50) {
-                    swapBlockDown(static_cast<TotemBlock*>(otherObj)->blockInt);
-                }
+                otherObj->position->y += someint;
             }
         } else {
             if (position->x > otherObj->position->x) {
-                std:: cout << std::endl << otherObj->size->x;;
                 position->x = otherObj->position->x + otherObj->size->x * 4;// + otherObj->size->x;
+                otherObj->position->x -= someint;
             } else {
                 position->x = otherObj->position->x- 64;
+                otherObj->position->x += someint;
             }
         }
     }
