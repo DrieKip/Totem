@@ -29,7 +29,7 @@ UIObject::~UIObject(){
 }
 
 void UIObject::draw(){
-    SDL_SetRenderDrawColor(gRenderer, 166, 255, 243, 255);
+    SDL_SetRenderDrawColor(gRenderer, 68, 43, 72, 255);
     //SDL_RenderClear(gRenderer);
     SDL_Rect some_rect;
     some_rect.x = position->x;

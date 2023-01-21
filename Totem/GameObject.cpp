@@ -48,12 +48,12 @@ GameObject::~GameObject(){
 }
 
 void GameObject::draw(){
-    SDL_SetRenderDrawColor(gRenderer, 166, 255, 243, 255);
+    SDL_SetRenderDrawColor(gRenderer, 68, 43, 72, 255);
     //SDL_RenderClear(gRenderer);
     SDL_Rect some_rect;
     some_rect.x = position->x;
     some_rect.y = position->y;
-    some_rect.w = size->x *4;
+    some_rect.w = size->x * 4;
     some_rect.h = size->y * 4;
     
     Camera::rectToCamera(some_rect);

@@ -15,6 +15,7 @@ class GameObjectLoader {
 public:
     static SDL_Texture* load_tex(std::string filename);
     static SDL_Texture* forTotemBlock;
+    static SDL_Texture* forTile;
     static SDL_Renderer* some_renderer;
     static void setTextures();
 private:

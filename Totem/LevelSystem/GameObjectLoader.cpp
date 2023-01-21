@@ -21,6 +21,9 @@ SDL_Texture* GameObjectLoader::load_tex(std::string filename) {
 }
 
 SDL_Texture* GameObjectLoader::forTotemBlock;
+SDL_Texture* GameObjectLoader::forTile;
+
 void GameObjectLoader::setTextures() {
-   forTotemBlock = GameObjectLoader::load_tex("Assets/BlankTotemBlock.png");
+    forTotemBlock = GameObjectLoader::load_tex("Assets/BlankTotemBlock.png");
+    forTile = GameObjectLoader::load_tex("Assets/ground_tile.png");
 }
