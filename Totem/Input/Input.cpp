@@ -7,6 +7,7 @@
 
 #include "Input.hpp"
 #include <SDL2/SDL.h>
+#include <iostream>
 
 bool Input::quit = true;
 int Input::key_A = 0;
@@ -14,7 +15,7 @@ int Input::key_D = 0;
 int Input::key_W = 0;
 int Input::key_P = 0;
 int Input::key_O = 0;
-SDL_Event* Input::forButton = NULL;
+SDL_Event Input::forButton;
 
 void Input::getInput() {
     SDL_Event e;
@@ -22,11 +23,15 @@ void Input::getInput() {
     //key_D = 0;
     key_P = 0;
     //key_O = 0;
+    Input::forButton.type = 0;
     while( SDL_PollEvent(&e) != 0 ) {
       //User requests quit
-            
         if(e.type == SDL_QUIT ) {
            quit = false;
+        }
+        if(e.type == SDL_MOUSEMOTION || e.type == SDL_MOUSEBUTTONDOWN || e.type == SDL_MOUSEBUTTONUP){
+            forButton = e;
+            //std::cout << e.type << std::endl;
         }
         if (e.type == SDL_KEYDOWN){
             if (e.key.keysym.scancode == SDL_SCANCODE_A) {

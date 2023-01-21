@@ -17,11 +17,14 @@
 
 class Button : public UIObject{
   public:
-    Button(vector2d* p, vector2d* s, SDL_Texture* t);
+    Button(vector2d* p, vector2d* s, SDL_Texture* t, SDL_Texture* t2, SDL_Texture* t3);
     ~Button();
     void draw();
     void update(double deltaTime);
-    void handleEvent(SDL_Event* e);
+    void handleEvent();
+    SDL_Texture* tex;
+    SDL_Texture* hoverTex;
+    SDL_Texture* pushTex;
   private:
     
 };

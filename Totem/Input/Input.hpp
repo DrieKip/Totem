@@ -20,7 +20,7 @@ public:
     static bool quit;
     static enum states {NO_PRESS = 0, PRESSED, RELEASED};
     static void getInput();
-    static SDL_Event* forButton;
+    static SDL_Event forButton;
 private:
     
 };
