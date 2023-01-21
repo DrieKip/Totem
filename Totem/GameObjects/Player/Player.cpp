@@ -104,7 +104,6 @@ void Player::update(double deltaTime){
     if (Input::key_P == Input::PRESSED) {
         swapBlockUp();
     }
-    /*if (grounded && extraCheck)*/ cout << endl<< grounded << " : " << extraCheck;
     extraCheck = false;
     //cout << endl << extraCheck;
     if (col != NULL) {
@@ -126,7 +125,6 @@ void Player::onCollision(GameObject* otherObj){
         return;
     }
     if (SDL_HasIntersection(&(checkCol->bounds), &(otherObj->col->bounds))) {
-        cout << " : " << "HMMM";
         extraCheck = true;
         if (otherObj->id == "Deactivated" && grounded && Input::key_O == Input::PRESSED) {
             grounded = false;

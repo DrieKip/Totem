@@ -25,7 +25,7 @@ GameObject(p, s, texture, hasCol) {
     src->y = srcPos.y;
     src->w = 8;
     src->h = 8;
-    cout << endl << "YEP";
+    //cout << endl << "YEP";
     if (hasCol) {
         col->setPosition(position);
     }

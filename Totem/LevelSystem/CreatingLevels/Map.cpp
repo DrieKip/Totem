@@ -31,7 +31,6 @@ void Map::createMap() {
     json data = json::parse(f);
     auto tileData = data["levels"][0]["layerInstances"][0]["autoLayerTiles"];
     for (int i = 0; i < tileData.size(); i++) {
-        cout << endl << tileData.at(i);
         //somevec
         if (tileData.at(i)["t"] == 36 || tileData.at(i)["t"] == 37) {
             TileObject* someObj = new TileObject(new vector2d(tileData.at(i)["px"][0], tileData.at(i)["px"][1]),
