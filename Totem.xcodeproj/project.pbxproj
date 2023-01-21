@@ -81,6 +81,7 @@
 		749804C3295EB0BE0036D951 /* Collider.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collider.hpp; sourceTree = "<group>"; };
 		74BC9F4B295FC12000E1D4D5 /* Collisions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collisions.cpp; sourceTree = "<group>"; };
 		74BC9F4C295FC12000E1D4D5 /* Collisions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collisions.hpp; sourceTree = "<group>"; };
+		74C1B0532962A48500569020 /* json.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = json.hpp; path = ../../../Downloads/include/single_include/nlohmann/json.hpp; sourceTree = "<group>"; };
 		74C1B0552962A53E00569020 /* Map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
 		74C1B0562962A53E00569020 /* Map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Map.hpp; sourceTree = "<group>"; };
 		74C1B0582962B5FC00569020 /* TileTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileTest.png; sourceTree = "<group>"; };
