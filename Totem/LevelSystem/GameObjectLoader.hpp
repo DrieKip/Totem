@@ -11,6 +11,8 @@
 #include <stdio.h>
 #include "GameObject.hpp"
 #include <string>
+#include <SDL2_mixer/SDL_mixer.h>
+
 class GameObjectLoader {
 public:
     static SDL_Texture* load_tex(std::string filename);
@@ -19,6 +21,9 @@ public:
     static SDL_Texture* buttonUp;
     static SDL_Texture* buttonDown;
     static SDL_Texture* door;
+    static SDL_Texture* spike;
+    static SDL_Texture* lava;
+    static Mix_Chunk* gJump;
     static SDL_Renderer* some_renderer;
     static void setTextures();
 private:

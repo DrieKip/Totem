@@ -7,6 +7,7 @@
 
 #include "Player.hpp"
 #include <iostream>
+#include <SDL2_mixer/SDL_mixer.h>
 #include "Input.hpp"
 #include <SDL2/SDL.h>
 #include "TotemBlock.hpp"
@@ -85,7 +86,6 @@ void Player::swapBlockDown(int block) {
     Input::key_O = 0;
 }
 void Player::update(double deltaTime){
-    std::cout << std::endl << position->y;
     //std::cout << std::endl << Input::key_D;
     if (extraCheck == false) {
         grounded = false;
@@ -106,6 +106,7 @@ void Player::update(double deltaTime){
         position->x -= 0.15 * deltaTime;
     }
     if (Input::key_W == Input::PRESSED && grounded) {
+        Mix_PlayChannel( -1, GameObjectLoader::gJump, 0 );
         grounded = false;
         velocity->y = -8.25;
     }

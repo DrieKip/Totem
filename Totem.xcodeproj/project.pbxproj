@@ -26,6 +26,8 @@
 		749804BE295EA72D0036D951 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 749804BD295EA72D0036D951 /* SDL2_image.framework */; };
 		749804C4295EB0BE0036D951 /* Collider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 749804C2295EB0BE0036D951 /* Collider.cpp */; };
 		74A636F229A236AB007A6F04 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A636EE29A236A4007A6F04 /* SDL2_mixer.framework */; };
+		74A636F729A2429C007A6F04 /* Spike.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74A636F529A2429C007A6F04 /* Spike.cpp */; };
+		74A636FB29A2A674007A6F04 /* Lava.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74A636F929A2A674007A6F04 /* Lava.cpp */; };
 		74BC9F4D295FC12000E1D4D5 /* Collisions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74BC9F4B295FC12000E1D4D5 /* Collisions.cpp */; };
 		74C1B0572962A53E00569020 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B0552962A53E00569020 /* Map.cpp */; };
 /* End PBXBuildFile section */
@@ -87,6 +89,10 @@
 		749804C2295EB0BE0036D951 /* Collider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collider.cpp; sourceTree = "<group>"; };
 		749804C3295EB0BE0036D951 /* Collider.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collider.hpp; sourceTree = "<group>"; };
 		74A636EE29A236A4007A6F04 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../../../../Library/Frameworks/SDL2_mixer.framework; sourceTree = "<group>"; };
+		74A636F529A2429C007A6F04 /* Spike.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Spike.cpp; sourceTree = "<group>"; };
+		74A636F629A2429C007A6F04 /* Spike.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Spike.hpp; sourceTree = "<group>"; };
+		74A636F929A2A674007A6F04 /* Lava.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Lava.cpp; sourceTree = "<group>"; };
+		74A636FA29A2A674007A6F04 /* Lava.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Lava.hpp; sourceTree = "<group>"; };
 		74BC9F4B295FC12000E1D4D5 /* Collisions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collisions.cpp; sourceTree = "<group>"; };
 		74BC9F4C295FC12000E1D4D5 /* Collisions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collisions.hpp; sourceTree = "<group>"; };
 		74C1B0552962A53E00569020 /* Map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
@@ -173,6 +179,10 @@
 				748EEC3729A119D7003EF883 /* InGameButton.hpp */,
 				748EEC3929A11B6D003EF883 /* Door.cpp */,
 				748EEC3A29A11B6D003EF883 /* Door.hpp */,
+				74A636F529A2429C007A6F04 /* Spike.cpp */,
+				74A636F629A2429C007A6F04 /* Spike.hpp */,
+				74A636F929A2A674007A6F04 /* Lava.cpp */,
+				74A636FA29A2A674007A6F04 /* Lava.hpp */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -356,8 +366,10 @@
 				7479765E29625E5E0071FCA7 /* GameObjectLoader.cpp in Sources */,
 				7479765B2961591C0071FCA7 /* SceneManager.cpp in Sources */,
 				7496D5052960343200C04589 /* Camera.cpp in Sources */,
+				74A636F729A2429C007A6F04 /* Spike.cpp in Sources */,
 				742D4B782962B967008C82EA /* TileObject.cpp in Sources */,
 				749804A6295A1B4D0036D951 /* main.cpp in Sources */,
+				74A636FB29A2A674007A6F04 /* Lava.cpp in Sources */,
 				748EEC3B29A11B6D003EF883 /* Door.cpp in Sources */,
 				749804BC295E595D0036D951 /* vars.cpp in Sources */,
 				74797657296154CA0071FCA7 /* TotemBlock.cpp in Sources */,

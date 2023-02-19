@@ -19,6 +19,8 @@
 #include "Door.hpp"
 #include "Button.hpp"
 #include "InGameButton.hpp"
+#include "Spike.hpp"
+#include "Lava.hpp"
 
 using json = nlohmann::json;
 using namespace std;
@@ -32,7 +34,7 @@ void Map::createMap() {
     ifstream f;
     f.open(filename.c_str());
     json data = json::parse(f);
-    auto tileData = data["levels"][1]["layerInstances"][1]["autoLayerTiles"];
+    auto tileData = data["levels"][2]["layerInstances"][1]["autoLayerTiles"];
     for (int i = 0; i < tileData.size(); i++) {
         //somevec
         if (tileData.at(i)["t"] == 36 || tileData.at(i)["t"] == 37) {
@@ -51,20 +53,38 @@ void Map::createMap() {
             SceneManager::objList.push_back(someObj);
         }
     }
-    auto entityData = data["levels"][1]["layerInstances"][0]["entityInstances"];
+    auto entityData = data["levels"][2]["layerInstances"][0]["entityInstances"];
     for (int i = 0; i < entityData.size(); i++) {
+        auto ent = entityData.at(i);
         if (entityData.at(i)["__identifier"] == "Door") {
             GameObject* someObj = new Door(new vector2d(4 * (int)entityData.at(i)["px"][0], 4 * (int)entityData.at(i)["px"][1]),
                                            new vector2d(16,16),
                                            GameObjectLoader::door,
                                            true,
-                                           "doorA");
+                                           ent["fieldInstances"][0]["__value"]);
             SceneManager::objList.push_back(someObj);
         }
         if (entityData.at(i)["__identifier"] == "Button") {
             GameObject* someObj = new InGameButton(new vector2d(4 * (int)entityData.at(i)["px"][0], 4 * (int)entityData.at(i)["px"][1]),
                                            new vector2d(16,8),
                                            GameObjectLoader::buttonUp,
+                                           true,
+                                           ent["fieldInstances"][0]["__value"]
+                                           );
+            SceneManager::objList.push_back(someObj);
+        }
+        if (entityData.at(i)["__identifier"] == "Spike") {
+            GameObject* someObj = new Spike(new vector2d(4 * (int)entityData.at(i)["px"][0], 4 * (int)entityData.at(i)["px"][1]),
+                                           new vector2d(5,6),
+                                           GameObjectLoader::spike,
+                                           true,
+                                           "spike");
+            SceneManager::objList.push_back(someObj);
+        }
+        if (entityData.at(i)["__identifier"] == "Lava") {
+            GameObject* someObj = new Lava(new vector2d(4 * (int)entityData.at(i)["px"][0], 4 * (int)entityData.at(i)["px"][1]),
+                                           new vector2d(ent["width"],ent["height"]),
+                                           GameObjectLoader::lava,
                                            true,
                                            "doorA");
             SceneManager::objList.push_back(someObj);
