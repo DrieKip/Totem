@@ -7,6 +7,7 @@
 
 #include "Input.hpp"
 #include <SDL2/SDL.h>
+#include <SDL2_mixer/SDL_mixer.h>
 #include <iostream>
 
 bool Input::quit = true;
@@ -27,6 +28,7 @@ void Input::getInput() {
     while( SDL_PollEvent(&e) != 0 ) {
       //User requests quit
         if(e.type == SDL_QUIT ) {
+            Mix_PauseMusic();
            quit = false;
         }
         if(e.type == SDL_MOUSEMOTION || e.type == SDL_MOUSEBUTTONDOWN || e.type == SDL_MOUSEBUTTONUP){

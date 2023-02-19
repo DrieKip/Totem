@@ -27,7 +27,7 @@ void Collisions::CheckCollision(Collider* col) {
     for (Collider* othercol : colliders) {
         if (!((col == othercol)) && SDL_HasIntersection(&(col->bounds), &(othercol->bounds))) {
             col->obj->onCollision(othercol->obj);
-            if (col->obj->id != "Deactivated") {
+            if (col->obj->id != "Deactivated" || othercol->obj->id == "InGameButton") {
                 othercol->obj->onCollision(col->obj);
             }
         }

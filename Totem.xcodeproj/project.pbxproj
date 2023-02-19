@@ -13,6 +13,8 @@
 		74797657296154CA0071FCA7 /* TotemBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74797655296154CA0071FCA7 /* TotemBlock.cpp */; };
 		7479765B2961591C0071FCA7 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 747976592961591C0071FCA7 /* SceneManager.cpp */; };
 		7479765E29625E5E0071FCA7 /* GameObjectLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7479765C29625E5E0071FCA7 /* GameObjectLoader.cpp */; };
+		748EEC3829A119D7003EF883 /* InGameButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 748EEC3629A119D7003EF883 /* InGameButton.cpp */; };
+		748EEC3B29A11B6D003EF883 /* Door.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 748EEC3929A11B6D003EF883 /* Door.cpp */; };
 		749125232960B9510098C657 /* Assets in CopyFiles */ = {isa = PBXBuildFile; fileRef = 749125222960B9510098C657 /* Assets */; };
 		7496D4FC295FF1E400C04589 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7496D4FA295FF1E400C04589 /* Player.cpp */; };
 		7496D500295FFBD900C04589 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7496D4FE295FFBD900C04589 /* Input.cpp */; };
@@ -23,6 +25,7 @@
 		749804BC295E595D0036D951 /* vars.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 749804BA295E595D0036D951 /* vars.cpp */; };
 		749804BE295EA72D0036D951 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 749804BD295EA72D0036D951 /* SDL2_image.framework */; };
 		749804C4295EB0BE0036D951 /* Collider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 749804C2295EB0BE0036D951 /* Collider.cpp */; };
+		74A636F229A236AB007A6F04 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A636EE29A236A4007A6F04 /* SDL2_mixer.framework */; };
 		74BC9F4D295FC12000E1D4D5 /* Collisions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74BC9F4B295FC12000E1D4D5 /* Collisions.cpp */; };
 		74C1B0572962A53E00569020 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B0552962A53E00569020 /* Map.cpp */; };
 /* End PBXBuildFile section */
@@ -41,7 +44,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2E2A61CB297CB049001FEC1A /* json.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = json.hpp; path = "../../../Library/Messages/Attachments/ff/15/F9624448-58B9-4631-8EEA-992AA728AAE5/json.hpp"; sourceTree = "<group>"; };
 		2EBDDA9529624FF60016D302 /* UIObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UIObject.cpp; sourceTree = "<group>"; };
 		2EBDDA9629624FF60016D302 /* UIObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UIObject.hpp; sourceTree = "<group>"; };
 		2EBDDA9B296262F50016D302 /* Button.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
@@ -60,6 +62,11 @@
 		7479765D29625E5E0071FCA7 /* GameObjectLoader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameObjectLoader.hpp; sourceTree = "<group>"; };
 		7479765F2962672A0071FCA7 /* BlankTotemBlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlankTotemBlock.png; sourceTree = "<group>"; };
 		74797660296268050071FCA7 /* BackgroundHill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundHill.png; sourceTree = "<group>"; };
+		748EEC34299FA319003EF883 /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = json.hpp; path = Totem/json.hpp; sourceTree = SOURCE_ROOT; };
+		748EEC3629A119D7003EF883 /* InGameButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InGameButton.cpp; sourceTree = "<group>"; };
+		748EEC3729A119D7003EF883 /* InGameButton.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InGameButton.hpp; sourceTree = "<group>"; };
+		748EEC3929A11B6D003EF883 /* Door.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Door.cpp; sourceTree = "<group>"; };
+		748EEC3A29A11B6D003EF883 /* Door.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Door.hpp; sourceTree = "<group>"; };
 		7491251E2960B8060098C657 /* ground_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground_tile.png; sourceTree = "<group>"; };
 		749125222960B9510098C657 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = Totem/Assets; sourceTree = "<group>"; };
 		7496D4FA295FF1E400C04589 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
@@ -79,9 +86,9 @@
 		749804C0295EAE060036D951 /* StanPot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StanPot.png; sourceTree = "<group>"; };
 		749804C2295EB0BE0036D951 /* Collider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collider.cpp; sourceTree = "<group>"; };
 		749804C3295EB0BE0036D951 /* Collider.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collider.hpp; sourceTree = "<group>"; };
+		74A636EE29A236A4007A6F04 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../../../../Library/Frameworks/SDL2_mixer.framework; sourceTree = "<group>"; };
 		74BC9F4B295FC12000E1D4D5 /* Collisions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collisions.cpp; sourceTree = "<group>"; };
 		74BC9F4C295FC12000E1D4D5 /* Collisions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collisions.hpp; sourceTree = "<group>"; };
-		74C1B0532962A48500569020 /* json.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = json.hpp; path = ../../../Downloads/include/single_include/nlohmann/json.hpp; sourceTree = "<group>"; };
 		74C1B0552962A53E00569020 /* Map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
 		74C1B0562962A53E00569020 /* Map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Map.hpp; sourceTree = "<group>"; };
 		74C1B0582962B5FC00569020 /* TileTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TileTest.png; sourceTree = "<group>"; };
@@ -92,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A636F229A236AB007A6F04 /* SDL2_mixer.framework in Frameworks */,
 				749804BE295EA72D0036D951 /* SDL2_image.framework in Frameworks */,
 				749804AE295A1B8F0036D951 /* SDL2.framework in Frameworks */,
 			);
@@ -130,6 +138,7 @@
 		742D4B742962B92D008C82EA /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
+				748EEC3529A119BB003EF883 /* Objects */,
 				7496D4F9295FF1CF00C04589 /* Player */,
 				742D4B752962B945008C82EA /* Tiles */,
 			);
@@ -155,6 +164,17 @@
 				7479765D29625E5E0071FCA7 /* GameObjectLoader.hpp */,
 			);
 			path = LevelSystem;
+			sourceTree = "<group>";
+		};
+		748EEC3529A119BB003EF883 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				748EEC3629A119D7003EF883 /* InGameButton.cpp */,
+				748EEC3729A119D7003EF883 /* InGameButton.hpp */,
+				748EEC3929A11B6D003EF883 /* Door.cpp */,
+				748EEC3A29A11B6D003EF883 /* Door.hpp */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		7496D4F9295FF1CF00C04589 /* Player */ = {
@@ -208,13 +228,13 @@
 		749804A4295A1B4D0036D951 /* Totem */ = {
 			isa = PBXGroup;
 			children = (
+				748EEC34299FA319003EF883 /* json.hpp */,
 				742D4B742962B92D008C82EA /* GameObjects */,
 				2EBDDA9329624FB50016D302 /* UI System */,
 				747976582961588A0071FCA7 /* LevelSystem */,
 				749804A5295A1B4D0036D951 /* main.cpp */,
 				749804BF295EADC80036D951 /* Assets */,
 				749804B7295E58E90036D951 /* GameObject.cpp */,
-				2E2A61CB297CB049001FEC1A /* json.hpp */,
 				7496D5022960341F00C04589 /* Camera */,
 				7496D4FD295FFAB400C04589 /* Input */,
 				749804C1295EB08F0036D951 /* Collision */,
@@ -228,6 +248,7 @@
 		749804AC295A1B8F0036D951 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				74A636EE29A236A4007A6F04 /* SDL2_mixer.framework */,
 				749804BD295EA72D0036D951 /* SDL2_image.framework */,
 				749804AD295A1B8F0036D951 /* SDL2.framework */,
 			);
@@ -337,10 +358,12 @@
 				7496D5052960343200C04589 /* Camera.cpp in Sources */,
 				742D4B782962B967008C82EA /* TileObject.cpp in Sources */,
 				749804A6295A1B4D0036D951 /* main.cpp in Sources */,
+				748EEC3B29A11B6D003EF883 /* Door.cpp in Sources */,
 				749804BC295E595D0036D951 /* vars.cpp in Sources */,
 				74797657296154CA0071FCA7 /* TotemBlock.cpp in Sources */,
 				749804C4295EB0BE0036D951 /* Collider.cpp in Sources */,
 				74C1B0572962A53E00569020 /* Map.cpp in Sources */,
+				748EEC3829A119D7003EF883 /* InGameButton.cpp in Sources */,
 				2EBDDA9D296262F50016D302 /* Button.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

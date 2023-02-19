@@ -39,7 +39,7 @@ void TileObject::draw() {
     SDL_Rect some_rect;
     some_rect.x = position->x;
     some_rect.y = position->y;
-    some_rect.w = size->x *4;
+    some_rect.w = size->x * 4;
     some_rect.h = size->y * 4;
     
     Camera::rectToCamera(some_rect);

@@ -1,5 +1,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
+#include <SDL2_mixer/SDL_mixer.h>
 #include <cstring>
 #include <string>
 #include <vector>
@@ -30,6 +31,7 @@ bool a = false;
 bool d = false;
 
 bool quit = true;
+Mix_Music *gMusic = NULL;
 
 int main(int argc, char* args[])
 {
@@ -42,9 +44,11 @@ int main(int argc, char* args[])
       SDL_WINDOWPOS_CENTERED,
       SDL_WINDOWPOS_CENTERED,
       Width, Height, SDL_WINDOW_SHOWN);
-      SDL_SetWindowFullscreen(gWindow, SDL_WINDOW_FULLSCREEN_DESKTOP);
       //SDL_SetWindowFullscreen(gWindow, SDL_WINDOW_FULLSCREEN_DESKTOP);
-
+      //SDL_SetWindowFullscreen(gWindow, SDL_WINDOW_FULLSCREEN_DESKTOP);
+      Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 );
+      gMusic = Mix_LoadMUS( "Assets/Lied.wav" );
+      Mix_PlayMusic( gMusic, -1 );
     if (gWindow != 0) {
       gRenderer = SDL_CreateRenderer(gWindow, -1, 0);
     }
@@ -59,12 +63,12 @@ int main(int argc, char* args[])
     Map* some_map = new Map("LevelSystem/CreatingLevels/Totem.json");
     some_map->createMap();
 
-    Player* Hutspot = new Player(new vector2d(300,64), new vector2d(16,16), player_tex, true);
+    Player* Hutspot = new Player(new vector2d(400,1028), new vector2d(16,16), player_tex, true);
     
     SceneManager::objList.push_back(Hutspot);
     
-    UIObject* UI1 = new Button(new vector2d(164, 64), new vector2d(100,100), stanPot, player_tex, ground_tex);
-    SceneManager::uiList.push_back(UI1);
+    /*UIObject* UI1 = new Button(new vector2d(164, 64), new vector2d(100,100), stanPot, player_tex, ground_tex);*/
+    //SceneManager::uiList.push_back(UI1);
     //GameObject* G1 = new GameObject(new vector2d(128, 64), new vector2d(16,16), stanPot, true);
     //SceneManager::objList.push_back(G1);
     

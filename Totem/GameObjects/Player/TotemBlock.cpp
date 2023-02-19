@@ -11,6 +11,7 @@
 #include <SDL2/SDL.h>
 #include "TotemBlock.hpp"
 #include "vars.hpp"
+#include "InGameButton.hpp"
 
 TotemBlock::TotemBlock(vector2d* p, vector2d* s, SDL_Texture* texture, bool hasCol, int num, Player* play) :
     GameObject(p, s, texture, hasCol)
@@ -49,17 +50,17 @@ void TotemBlock::onCollision(GameObject* otherObj) {
             }
             if (intersection.h < intersection.w) {
                 player->velocity->y = 0;
-                if (position->y > otherObj->position->y) {
-                    changes.y = otherObj->position->y + otherObj->size->y * 4- position->y;
+                if (position->y > otherObj->col->bounds.y) {
+                    changes.y = otherObj->col->bounds.y + otherObj->col->bounds.h - position->y;
                 } else {
                     player->velocity->y = 0;
-                    changes.y = otherObj->position->y - 64 - position->y;
+                    changes.y = otherObj->col->bounds.y - 64 - position->y;
                 }
             } else {
-                if (position->x > otherObj->position->x) {
-                    changes.x =  otherObj->position->x + otherObj->size->x * 4 - position->x;
+                if (position->x > otherObj->col->bounds.x) {
+                    changes.x =  otherObj->col->bounds.x + otherObj->col->bounds.w - position->x;
                 } else {
-                    changes.x = otherObj->position->x- 64 - position->x ;
+                    changes.x = otherObj->col->bounds.x- 64 - position->x ;
                 }
             }
             *(player->position) += changes;
@@ -73,18 +74,18 @@ void TotemBlock::onCollision(GameObject* otherObj) {
         SDL_IntersectRect(&(this->col->bounds), &(otherObj->col->bounds), &intersection);
         if (intersection.h < intersection.w) {
             velocity->y = 0;
-            if (position->y > otherObj->position->y) {
-                position->y = otherObj->position->y + otherObj->size->y * 4;
+            if (position->y > otherObj->col->bounds.y) {
+                position->y = otherObj->col->bounds.y + otherObj->col->bounds.h;
             } else {
                 grounded = true;
-                position->y = otherObj->position->y - 64;
+                position->y = otherObj->col->bounds.y - 64;
             }
         } else {
-            if (position->x > otherObj->position->x) {
-                //position->x = otherObj->position->x + otherObj->size->x * 4;
-                position->x = otherObj->position->x + otherObj->size->x * 4;
+            if (position->x > otherObj->col->bounds.x) {
+                //position->x = otherObj->col->bounds.x + otherObj->size->x * 4;
+                position->x = otherObj->col->bounds.x + otherObj->col->bounds.w;
             } else {
-                position->x = otherObj->position->x- 64;
+                position->x = otherObj->col->bounds.x - 64;
             }
         }
     }
