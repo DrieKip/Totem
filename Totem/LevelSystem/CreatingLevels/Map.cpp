@@ -34,26 +34,28 @@ void Map::createMap() {
     ifstream f;
     f.open(filename.c_str());
     json data = json::parse(f);
-    auto tileData = data["levels"][2]["layerInstances"][1]["autoLayerTiles"];
+    auto tileData = data["levels"][3]["layerInstances"][1]["autoLayerTiles"];
     for (int i = 0; i < tileData.size(); i++) {
         //somevec
-        if (tileData.at(i)["t"] == 36 || tileData.at(i)["t"] == 37) {
+        int no =tileData.at(i)["t"];
+        std::vector<int> numbers = data["defs"]["tilesets"][0]["enumTags"][1]["tileIds"].get<std::vector<int>>();
+        if (std::find(numbers.begin(), numbers.end(), no) != numbers.end()) {
             TileObject* someObj = new TileObject(new vector2d(tileData.at(i)["px"][0], tileData.at(i)["px"][1]),
-                                     new vector2d(8,8),
+                                     new vector2d(16,16),
                                      GameObjectLoader::forTile,
                                      false,
                                      vector2d{tileData.at(i)["src"][0], tileData.at(i)["src"][1]});
             SceneManager::objList.push_back(someObj);
         } else {
             TileObject* someObj = new TileObject(new vector2d(tileData.at(i)["px"][0], tileData.at(i)["px"][1]),
-                                                 new vector2d(8,8),
+                                                 new vector2d(16,16),
                                                  GameObjectLoader::forTile,
                                                  true,
                                                  vector2d{tileData.at(i)["src"][0], tileData.at(i)["src"][1]});
             SceneManager::objList.push_back(someObj);
         }
     }
-    auto entityData = data["levels"][2]["layerInstances"][0]["entityInstances"];
+    /*auto entityData = data["levels"][2]["layerInstances"][0]["entityInstances"];
     for (int i = 0; i < entityData.size(); i++) {
         auto ent = entityData.at(i);
         if (entityData.at(i)["__identifier"] == "Door") {
@@ -89,6 +91,6 @@ void Map::createMap() {
                                            "doorA");
             SceneManager::objList.push_back(someObj);
         }
-    }
+    }*/
         
 }

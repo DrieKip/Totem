@@ -11,7 +11,6 @@
 #include <stdio.h>
 #include "GameObject.hpp"
 #include <vector>
-#include "TotemBlock.hpp"
 #include "Door.hpp"
 
 class InGameButton : public GameObject {
