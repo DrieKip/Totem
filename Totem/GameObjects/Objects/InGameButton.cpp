@@ -11,6 +11,7 @@
 #include <iostream>
 #include "Input.hpp"
 #include <SDL2/SDL.h>
+#include "TotemBlock.hpp"
 #include "SceneManager.hpp"
 #include "GameObjectLoader.hpp"
 #include <vector>

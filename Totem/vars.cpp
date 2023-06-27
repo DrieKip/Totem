@@ -13,11 +13,6 @@
 
 using namespace std;
 
-vector2d::vector2d(){
-    x = 0;
-    y = 0;
-}
-
 vector2d::vector2d(double xx, double yy){
   x = xx;
   y = yy;
@@ -26,10 +21,4 @@ vector2d::vector2d(double xx, double yy){
 void vector2d::operator+=(const vector2d& other){
     x += other.x;
     y += other.y;
-}
-vector2d vector2d::operator+(const vector2d& other){
-    return vector2d(x + other.x, y + other.y);
-}
-vector2d vector2d::operator*(const vector2d& other){
-    return vector2d(x * other.x, y * other.y);
 }

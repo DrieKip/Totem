@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "GameObject.hpp"
 #include <vector>
+#include "TotemBlock.hpp"
 
 class Door : public GameObject {
 public:

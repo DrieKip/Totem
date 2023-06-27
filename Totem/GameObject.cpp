@@ -34,8 +34,10 @@ GameObject::GameObject(vector2d* p, vector2d* s, SDL_Texture* texture, bool hasC
     flipType = SDL_FLIP_NONE;
     id = "empty";
     if (hasCol) {
+
         col = new Collider(position, size, this);
         Collisions::AddCollider(col);
+        
     }
 }
 
@@ -46,8 +48,7 @@ GameObject::~GameObject(){
 }
 
 void GameObject::draw(){
-    //SDL_SetRenderDrawColor(gRenderer, 68, 43, 72, 255);
-    SDL_SetRenderDrawColor(gRenderer, 139, 210, 241, 255);
+    SDL_SetRenderDrawColor(gRenderer, 68, 43, 72, 255);
     //SDL_RenderClear(gRenderer);
     SDL_Rect some_rect;
     some_rect.x = position->x;

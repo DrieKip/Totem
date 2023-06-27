@@ -10,13 +10,12 @@
 		2EBDDA9729624FF60016D302 /* UIObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EBDDA9529624FF60016D302 /* UIObject.cpp */; };
 		2EBDDA9D296262F50016D302 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2EBDDA9B296262F50016D302 /* Button.cpp */; };
 		742D4B782962B967008C82EA /* TileObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742D4B762962B967008C82EA /* TileObject.cpp */; };
+		74797657296154CA0071FCA7 /* TotemBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74797655296154CA0071FCA7 /* TotemBlock.cpp */; };
 		7479765B2961591C0071FCA7 /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 747976592961591C0071FCA7 /* SceneManager.cpp */; };
 		7479765E29625E5E0071FCA7 /* GameObjectLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7479765C29625E5E0071FCA7 /* GameObjectLoader.cpp */; };
-		747D8D6E2A48835D000966D5 /* Assets in CopyFiles */ = {isa = PBXBuildFile; fileRef = 747D8D6D2A48835D000966D5 /* Assets */; };
-		747D8D7B2A48999D000966D5 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 747D8D772A48999D000966D5 /* Particle.cpp */; };
-		747D8D7C2A48999D000966D5 /* ParticleEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 747D8D7A2A48999D000966D5 /* ParticleEffect.cpp */; };
 		748EEC3829A119D7003EF883 /* InGameButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 748EEC3629A119D7003EF883 /* InGameButton.cpp */; };
 		748EEC3B29A11B6D003EF883 /* Door.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 748EEC3929A11B6D003EF883 /* Door.cpp */; };
+		749125232960B9510098C657 /* Assets in CopyFiles */ = {isa = PBXBuildFile; fileRef = 749125222960B9510098C657 /* Assets */; };
 		7496D4FC295FF1E400C04589 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7496D4FA295FF1E400C04589 /* Player.cpp */; };
 		7496D500295FFBD900C04589 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7496D4FE295FFBD900C04589 /* Input.cpp */; };
 		7496D5052960343200C04589 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7496D5032960343200C04589 /* Camera.cpp */; };
@@ -40,7 +39,7 @@
 			dstPath = Assets;
 			dstSubfolderSpec = 7;
 			files = (
-				747D8D6E2A48835D000966D5 /* Assets in CopyFiles */,
+				749125232960B9510098C657 /* Assets in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,30 +56,21 @@
 		742D4B792962CA80008C82EA /* File.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = File.txt; sourceTree = "<group>"; };
 		742D4B7F2962D9B9008C82EA /* Totem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Totem.json; sourceTree = "<group>"; };
 		747976542960C0220071FCA7 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		74797655296154CA0071FCA7 /* TotemBlock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TotemBlock.cpp; sourceTree = "<group>"; };
+		74797656296154CA0071FCA7 /* TotemBlock.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TotemBlock.hpp; sourceTree = "<group>"; };
 		747976592961591C0071FCA7 /* SceneManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SceneManager.cpp; sourceTree = "<group>"; };
 		7479765A2961591C0071FCA7 /* SceneManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SceneManager.hpp; sourceTree = "<group>"; };
 		7479765C29625E5E0071FCA7 /* GameObjectLoader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameObjectLoader.cpp; sourceTree = "<group>"; };
 		7479765D29625E5E0071FCA7 /* GameObjectLoader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameObjectLoader.hpp; sourceTree = "<group>"; };
 		7479765F2962672A0071FCA7 /* BlankTotemBlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlankTotemBlock.png; sourceTree = "<group>"; };
 		74797660296268050071FCA7 /* BackgroundHill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundHill.png; sourceTree = "<group>"; };
-		747D8D6D2A48835D000966D5 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = Totem/Assets; sourceTree = "<group>"; };
-		747D8D762A48997A000966D5 /* UI System */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "UI System"; sourceTree = "<group>"; };
-		747D8D772A48999D000966D5 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Particle.cpp; sourceTree = "<group>"; };
-		747D8D782A48999D000966D5 /* ParticleEffect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ParticleEffect.hpp; sourceTree = "<group>"; };
-		747D8D792A48999D000966D5 /* Particle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Particle.hpp; sourceTree = "<group>"; };
-		747D8D7A2A48999D000966D5 /* ParticleEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleEffect.cpp; sourceTree = "<group>"; };
-		747D8D802A49BB1C000966D5 /* Particle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Particle1.png; sourceTree = "<group>"; };
-		747D8D812A49C936000966D5 /* Particle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Particle2.png; sourceTree = "<group>"; };
-		747D8D822A49EAA5000966D5 /* Ww2SpelGround1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ww2SpelGround1.png; sourceTree = "<group>"; };
-		747D8D832A4A27AE000966D5 /* soldier_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_head.png; sourceTree = "<group>"; };
-		747D8D842A4A27AE000966D5 /* soldier_foot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_foot.png; sourceTree = "<group>"; };
-		747D8D852A4A27AE000966D5 /* soldier_body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_body.png; sourceTree = "<group>"; };
 		748EEC34299FA319003EF883 /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = json.hpp; path = Totem/json.hpp; sourceTree = SOURCE_ROOT; };
 		748EEC3629A119D7003EF883 /* InGameButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InGameButton.cpp; sourceTree = "<group>"; };
 		748EEC3729A119D7003EF883 /* InGameButton.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InGameButton.hpp; sourceTree = "<group>"; };
 		748EEC3929A11B6D003EF883 /* Door.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Door.cpp; sourceTree = "<group>"; };
 		748EEC3A29A11B6D003EF883 /* Door.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Door.hpp; sourceTree = "<group>"; };
 		7491251E2960B8060098C657 /* ground_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground_tile.png; sourceTree = "<group>"; };
+		749125222960B9510098C657 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = Totem/Assets; sourceTree = "<group>"; };
 		7496D4FA295FF1E400C04589 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		7496D4FB295FF1E400C04589 /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
 		7496D4FE295FFBD900C04589 /* Input.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
@@ -154,7 +144,6 @@
 		742D4B742962B92D008C82EA /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
-				747D8D7F2A4899E1000966D5 /* Particles */,
 				748EEC3529A119BB003EF883 /* Objects */,
 				7496D4F9295FF1CF00C04589 /* Player */,
 				742D4B752962B945008C82EA /* Tiles */,
@@ -183,17 +172,6 @@
 			path = LevelSystem;
 			sourceTree = "<group>";
 		};
-		747D8D7F2A4899E1000966D5 /* Particles */ = {
-			isa = PBXGroup;
-			children = (
-				747D8D772A48999D000966D5 /* Particle.cpp */,
-				747D8D792A48999D000966D5 /* Particle.hpp */,
-				747D8D7A2A48999D000966D5 /* ParticleEffect.cpp */,
-				747D8D782A48999D000966D5 /* ParticleEffect.hpp */,
-			);
-			path = Particles;
-			sourceTree = "<group>";
-		};
 		748EEC3529A119BB003EF883 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +192,8 @@
 			children = (
 				7496D4FA295FF1E400C04589 /* Player.cpp */,
 				7496D4FB295FF1E400C04589 /* Player.hpp */,
+				74797655296154CA0071FCA7 /* TotemBlock.cpp */,
+				74797656296154CA0071FCA7 /* TotemBlock.hpp */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -239,8 +219,8 @@
 		74980499295A1B4D0036D951 = {
 			isa = PBXGroup;
 			children = (
-				747D8D6D2A48835D000966D5 /* Assets */,
 				747976542960C0220071FCA7 /* info.plist */,
+				749125222960B9510098C657 /* Assets */,
 				749804A4295A1B4D0036D951 /* Totem */,
 				749804A3295A1B4D0036D951 /* Products */,
 				749804AC295A1B8F0036D951 /* Frameworks */,
@@ -258,7 +238,6 @@
 		749804A4295A1B4D0036D951 /* Totem */ = {
 			isa = PBXGroup;
 			children = (
-				747D8D762A48997A000966D5 /* UI System */,
 				748EEC34299FA319003EF883 /* json.hpp */,
 				742D4B742962B92D008C82EA /* GameObjects */,
 				2EBDDA9329624FB50016D302 /* UI System */,
@@ -289,12 +268,6 @@
 		749804BF295EADC80036D951 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				747D8D852A4A27AE000966D5 /* soldier_body.png */,
-				747D8D842A4A27AE000966D5 /* soldier_foot.png */,
-				747D8D832A4A27AE000966D5 /* soldier_head.png */,
-				747D8D822A49EAA5000966D5 /* Ww2SpelGround1.png */,
-				747D8D812A49C936000966D5 /* Particle2.png */,
-				747D8D802A49BB1C000966D5 /* Particle1.png */,
 				74C1B0582962B5FC00569020 /* TileTest.png */,
 				74797660296268050071FCA7 /* BackgroundHill.png */,
 				7479765F2962672A0071FCA7 /* BlankTotemBlock.png */,
@@ -385,7 +358,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				747D8D7C2A48999D000966D5 /* ParticleEffect.cpp in Sources */,
 				2EBDDA9729624FF60016D302 /* UIObject.cpp in Sources */,
 				749804B9295E58E90036D951 /* GameObject.cpp in Sources */,
 				74BC9F4D295FC12000E1D4D5 /* Collisions.cpp in Sources */,
@@ -394,13 +366,13 @@
 				7479765E29625E5E0071FCA7 /* GameObjectLoader.cpp in Sources */,
 				7479765B2961591C0071FCA7 /* SceneManager.cpp in Sources */,
 				7496D5052960343200C04589 /* Camera.cpp in Sources */,
-				747D8D7B2A48999D000966D5 /* Particle.cpp in Sources */,
 				74A636F729A2429C007A6F04 /* Spike.cpp in Sources */,
 				742D4B782962B967008C82EA /* TileObject.cpp in Sources */,
 				749804A6295A1B4D0036D951 /* main.cpp in Sources */,
 				74A636FB29A2A674007A6F04 /* Lava.cpp in Sources */,
 				748EEC3B29A11B6D003EF883 /* Door.cpp in Sources */,
 				749804BC295E595D0036D951 /* vars.cpp in Sources */,
+				74797657296154CA0071FCA7 /* TotemBlock.cpp in Sources */,
 				749804C4295EB0BE0036D951 /* Collider.cpp in Sources */,
 				74C1B0572962A53E00569020 /* Map.cpp in Sources */,
 				748EEC3829A119D7003EF883 /* InGameButton.cpp in Sources */,

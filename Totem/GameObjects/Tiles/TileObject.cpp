@@ -23,18 +23,18 @@ GameObject(p, s, texture, hasCol) {
     src = new SDL_Rect;
     src->x = srcPos.x;
     src->y = srcPos.y;
-    src->w = 16;
-    src->h = 16;
+    src->w = 8;
+    src->h = 8;
     //cout << endl << "YEP";
     if (hasCol) {
-        col->setPosition(p);
+        col->setPosition(position);
     }
 }
 TileObject::~TileObject() {
     
 }
 void TileObject::draw() {
-    SDL_SetRenderDrawColor(gRenderer, 139, 210, 241, 255);
+    SDL_SetRenderDrawColor(gRenderer, 68, 43, 72, 255);
     //SDL_RenderClear(gRenderer);
     SDL_Rect some_rect;
     some_rect.x = position->x;
